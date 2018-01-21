@@ -1,5 +1,8 @@
 # read data to a table
-data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", 
+download.file(url = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", 
+              destfile = "household_power_consumption.zip")
+unzip("household_power_consumption.zip")
+data <- read.table(file="household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", 
                    colClasses = c('character','character','numeric','numeric',
                                   'numeric','numeric','numeric','numeric','numeric'))
 # format date
